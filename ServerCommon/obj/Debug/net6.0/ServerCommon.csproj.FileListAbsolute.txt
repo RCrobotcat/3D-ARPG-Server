@@ -1,0 +1,12 @@
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\bin\Debug\net6.0\ServerCommon.deps.json
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\bin\Debug\net6.0\ServerCommon.dll
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\bin\Debug\net6.0\ServerCommon.pdb
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.csproj.AssemblyReference.cache
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.AssemblyInfoInputs.cache
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.AssemblyInfo.cs
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.csproj.CoreCompileInputs.cache
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.dll
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\refint\ServerCommon.dll
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.pdb
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ref\ServerCommon.dll

@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ServerCommon/1.0.0": {
+        "dependencies": {
+          "PELog": "1.0.3"
+        },
+        "runtime": {
+          "ServerCommon.dll": {}
+        }
+      },
+      "PELog/1.0.3": {
+        "runtime": {
+          "lib/netstandard2.1/PELog.dll": {
+            "assemblyVersion": "1.0.3.0",
+            "fileVersion": "1.0.3.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ServerCommon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PELog/1.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yjXKXvgaCqcCk+vqtTSPFk9gAxaV0hFvy/kxwmKN3BPqKVSaEE+mKyzqMRlv4QmWg/y8yG2e7bCyXrT9/A4ACw==",
+      "path": "pelog/1.0.3",
+      "hashPath": "pelog.1.0.3.nupkg.sha512"
+    }
+  }
+}

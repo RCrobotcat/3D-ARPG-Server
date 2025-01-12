@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Qn0vLE68sBQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\3D_ARPG_Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\25190\\.nuget\\packages\\pelog\\1.0.3\\pelog.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
