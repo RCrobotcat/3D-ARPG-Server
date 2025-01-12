@@ -10,3 +10,4 @@ C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug
 C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\refint\ServerCommon.dll
 C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.pdb
 C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ref\ServerCommon.dll
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\ServerCommon\obj\Debug\net6.0\ServerCommon.sourcelink.json

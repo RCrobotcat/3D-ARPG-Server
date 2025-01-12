@@ -17,3 +17,4 @@ C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\3D_ARPG_Server\obj\Deb
 C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\3D_ARPG_Server\obj\Debug\net6.0\3D_ARPG_Server.pdb
 C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\3D_ARPG_Server\obj\Debug\net6.0\3D_ARPG_Server.genruntimeconfig.cache
 C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\3D_ARPG_Server\obj\Debug\net6.0\ref\3D_ARPG_Server.dll
+C:\Users\25190\Desktop\course\3DARPGServer\3D_ARPG_Server\3D_ARPG_Server\obj\Debug\net6.0\3D_ARPG_Server.sourcelink.json

@@ -29,6 +29,8 @@ namespace RCProtocol
         public EnterStageMode mode { get; set; }
         public int prefixID { get; set; }
         public int stageID { get; set; }
+
+        public string stageName { get; set; }
     }
 
     public class AffirmEnterStage

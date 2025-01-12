@@ -122,7 +122,8 @@ namespace ARPGServer
                     cmd = CMD.NtfEnterStage,
                     ntfEnterStage = new NtfEnterStage
                     {
-                        stageID = 2
+                        // stageID = 2
+                        stageName = "TestScene"
                     }
                 });
 
