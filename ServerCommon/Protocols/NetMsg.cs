@@ -14,6 +14,9 @@ namespace RCProtocol
         }
 
         public NtfEnterStage ntfEnterStage { get; set; }
+
+        public InstantiateRole instantiateRole { get; set; }
+
         public AffirmEnterStage affirmEnterStage { get; set; }
     }
 
@@ -31,6 +34,14 @@ namespace RCProtocol
         public int stageID { get; set; }
 
         public string stageName { get; set; }
+    }
+
+    public class InstantiateRole
+    {
+        public int roleID { get; set; }
+
+        public float PosX { get; set; }
+        public float PosZ { get; set; }
     }
 
     public class AffirmEnterStage

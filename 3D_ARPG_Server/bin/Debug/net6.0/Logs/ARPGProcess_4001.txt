@@ -1,15 +1,18 @@
-[L]# 15:32:14-863  Tid:1 >> Args:
-[L]# 15:32:14-868  Tid:1 >> Launch ARPGProcess ==> ID: 4001
-[L]# 15:32:14-914  Tid:1 >> Server Start...
-[L]# 15:32:19-491  Tid:8 >> Token: 4999 => UnityClient Connection: True
-[L]# 15:32:19-515  Tid:1 >> 4999 new client connected!
-[L]# 15:32:25-160  Tid:8 >> Token: 4999 => Receive UnityClient Command:ReqAccountLogin
-[L]# 15:32:25-200  Tid:1 >> Login Account: RCrobotcat.
-[W]# 15:32:44-366  Tid:8 >> TokenID:4999 Close:1
-[L]# 15:32:44-367  Tid:8 >> Token: 4999 => UnityClient Disconnected.
-[L]# 15:32:44-378  Tid:1 >> 4999 client disconnected!
-[L]# 15:32:46-403  Tid:8 >> Token: 4999 => UnityClient Connection: True
-[L]# 15:32:46-408  Tid:1 >> 4999 new client connected!
-[W]# 15:32:47-485  Tid:8 >> TokenID:4999 Close:1
-[L]# 15:32:47-486  Tid:8 >> Token: 4999 => UnityClient Disconnected.
-[L]# 15:32:47-511  Tid:1 >> 4999 client disconnected!
+[L]# 21:37:19-827  Tid:1 >> Args:
+[L]# 21:37:19-832  Tid:1 >> Launch ARPGProcess ==> ID: 4001
+[L]# 21:37:19-879  Tid:1 >> Server Start...
+[L]# 21:37:26-499  Tid:8 >> Token: 4999 => UnityClient Connection: True
+[L]# 21:37:26-507  Tid:1 >> 4999 new client connected!
+[L]# 21:37:31-314  Tid:8 >> Token: 4999 => Receive UnityClient Command:ReqAccountLogin
+[L]# 21:37:31-357  Tid:1 >> Login Account: RCrobotcat.
+[W]# 21:37:45-373  Tid:8 >> TokenID:4999 Close:1
+[L]# 21:37:45-374  Tid:8 >> Token: 4999 => UnityClient Disconnected.
+[L]# 21:37:45-402  Tid:1 >> 4999 client disconnected!
+[L]# 21:37:58-320  Tid:8 >> Token: 4999 => UnityClient Connection: True
+[L]# 21:37:58-324  Tid:1 >> 4999 new client connected!
+[L]# 21:38:03-226  Tid:8 >> Token: 4999 => Receive UnityClient Command:ReqAccountLogin
+[L]# 21:38:05-571  Tid:8 >> Token: 4999 => Receive UnityClient Command:ReqAccountLogin
+[L]# 21:38:05-578  Tid:1 >> Login Account: RCrobotcat_1.
+[W]# 21:39:14-183  Tid:8 >> TokenID:4999 Close:1
+[L]# 21:39:14-183  Tid:8 >> Token: 4999 => UnityClient Disconnected.
+[L]# 21:39:14-184  Tid:1 >> 4999 client disconnected!

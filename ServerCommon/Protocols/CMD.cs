@@ -14,6 +14,8 @@
         NtfEnterStage, // Notify Enter Stage.
         AffirmEnterStage, // Affirm Enter Stage.
 
+        InstantiateRole, // Instantiate Role.
+
         NtfRoleData, // Notify Role Data.
 
         ReqRoleToken, // Request Role Token.

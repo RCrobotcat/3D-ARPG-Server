@@ -123,59 +123,27 @@ namespace ARPGServer
                     ntfEnterStage = new NtfEnterStage
                     {
                         // stageID = 2
+                        mode = EnterStageMode.Login,
                         stageName = "TestScene"
                     }
                 });
 
-                if (!Account2Roles.TryGetValue(reqAccountLogin.account, out List<RoleData> roles))
-                {
-                    roles = new List<RoleData>()
-                    {
-                        new ()
-                            {
-                                uid = TempUid, // 临时模拟uid
-                                nickName = $"{reqAccountLogin.account}_{tempUid}",
-                                posX = 1,
-                                posZ = 1,
-                                dirX = 0,
-                                dirZ = 0,
-                                lastRid = PECalculateTool.GetWorldID(1, 101),
-                                lastTid = 0,
-
-                                unitID = 101,
-                                level = 66,
-                                exp = 777
-                            },
-                        new ()
-                            {
-                                uid = TempUid, // 临时模拟uid
-                                nickName = $"{reqAccountLogin.account}_{tempUid}",
-                                posX = 1,
-                                posZ = 1,
-                                dirX = 0,
-                                dirZ = 0,
-                                lastRid = PECalculateTool.GetWorldID(1, 101),
-                                lastTid = 0,
-
-                                unitID = 101,
-                                level = 77,
-                                exp = 666
-                            }
-                    };
-                    Account2Roles.Add(reqAccountLogin.account, roles);
-                }
-
-                // 下发角色数据 Send Role Data
                 package.token.SendMsg(new NetMsg
                 {
-                    cmd = CMD.NtfRoleData,
-                    errorCode = package.message.errorCode,
-                    ntfRoleData = new NtfRoleData
+                    cmd = CMD.InstantiateRole,
+                    instantiateRole = new InstantiateRole
                     {
-                        roleData = roles
+                        roleID = GetRoleID(),
+                        PosX = 1,
+                        PosZ = 1
                     }
                 });
             }
+        }
+        int roleId = 101;
+        public int GetRoleID()
+        {
+            return roleId++;
         }
 
         // 请求角色Token Request Role Token
@@ -241,6 +209,63 @@ namespace ARPGServer
             {
                 return new Tuple<ErrorCode, RoleData>(ErrorCode.token_not_exist, null);
             }
+        }
+
+        /// <summary>
+        /// 下发角色数据
+        /// </summary>
+        public void RespRoleData(LoginPackage package)
+        {
+            ReqAccountLogin reqAccountLogin = package.message.reqAccountLogin;
+
+            if (!Account2Roles.TryGetValue(reqAccountLogin.account, out List<RoleData> roles))
+            {
+                roles = new List<RoleData>()
+                    {
+                        new ()
+                            {
+                                uid = TempUid, // 临时模拟uid
+                                nickName = $"{reqAccountLogin.account}_{tempUid}",
+                                posX = 1,
+                                posZ = 1,
+                                dirX = 0,
+                                dirZ = 0,
+                                lastRid = PECalculateTool.GetWorldID(1, 101),
+                                lastTid = 0,
+
+                                unitID = 101,
+                                level = 66,
+                                exp = 777
+                            },
+                        new ()
+                            {
+                                uid = TempUid, // 临时模拟uid
+                                nickName = $"{reqAccountLogin.account}_{tempUid}",
+                                posX = 1,
+                                posZ = 1,
+                                dirX = 0,
+                                dirZ = 0,
+                                lastRid = PECalculateTool.GetWorldID(1, 101),
+                                lastTid = 0,
+
+                                unitID = 101,
+                                level = 77,
+                                exp = 666
+                            }
+                    };
+                Account2Roles.Add(reqAccountLogin.account, roles);
+            }
+
+            // 下发角色数据 Send Role Data
+            package.token.SendMsg(new NetMsg
+            {
+                cmd = CMD.NtfRoleData,
+                errorCode = package.message.errorCode,
+                ntfRoleData = new NtfRoleData
+                {
+                    roleData = roles
+                }
+            });
         }
     }
 
