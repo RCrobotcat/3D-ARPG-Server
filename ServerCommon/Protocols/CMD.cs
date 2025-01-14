@@ -6,8 +6,8 @@
 
         OnClient2LoginConnected,
         OnClient2LoginDisConnected,
-        OnClient2BattleConnected,
-        OnClient2BattleDisConnected,
+        OnClient2GameConnected,
+        OnClient2GameDisConnected,
 
         ReqAccountLogin, // Request Account Login.
         RespAccountLogin, // Response Account Login.

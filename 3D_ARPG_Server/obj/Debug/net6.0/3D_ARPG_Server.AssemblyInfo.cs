@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("3D_ARPG_Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09233ab00dd007058b262d375088db385ff2cdc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f7aa346d508fe4769ffe2a0c3b24d61ca75f771")]
 [assembly: System.Reflection.AssemblyProductAttribute("3D_ARPG_Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("3D_ARPG_Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

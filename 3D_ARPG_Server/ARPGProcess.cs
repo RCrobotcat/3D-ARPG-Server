@@ -11,11 +11,15 @@ namespace ARPGServer
     public class ARPGProcess : ServerProcess<ARPGProcess>
     {
         public LoginNet loginNet;
+        public GameNet gameNet;
 
         public override void Awake()
         {
             loginNet = new LoginNet();
             AddServceOrSystem(loginNet);
+
+            gameNet = new GameNet();
+            AddServceOrSystem(gameNet);
 
             base.Awake();
         }
