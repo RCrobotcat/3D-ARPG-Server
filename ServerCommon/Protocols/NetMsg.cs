@@ -18,6 +18,7 @@ namespace RCProtocol
         public InstantiateRole instantiateRole { get; set; }
 
         public AffirmEnterStage affirmEnterStage { get; set; }
+        public ExitGame exitGame { get; set; }
     }
 
     public enum EnterStageMode
@@ -30,8 +31,8 @@ namespace RCProtocol
     public class NtfEnterStage
     {
         public EnterStageMode mode { get; set; }
-        public int prefixID { get; set; }
-        public int stageID { get; set; }
+        /*public int prefixID { get; set; }
+        public int stageID { get; set; }*/
 
         public string stageName { get; set; }
     }
@@ -39,15 +40,47 @@ namespace RCProtocol
     public class InstantiateRole
     {
         public int roleID { get; set; }
+        public string account { get; set; }
+        public PlayerStateEnum playerState = PlayerStateEnum.None; // 玩家状态
+        public EntityDriverEnum driverEnum = EntityDriverEnum.None; // 实体驱动类型
 
         public float PosX { get; set; }
         public float PosZ { get; set; }
+    }
+    public enum PlayerStateEnum
+    {
+        None = 0,
+        Online = 1, // 玩家上线
+        Offline = 2, // 玩家离线
+        Mandate = 3 // 服务器托管状态
+    }
+    public enum EntityDriverEnum
+    {
+        None,
+        Client, // 客户端驱动的实体
+        Server // 服务器驱动的实体
     }
 
     public class AffirmEnterStage
     {
         public EnterStageMode mode { get; set; }
-        public int prefixID { get; set; }
-        public int stageID { get; set; }
+        /*public int prefixID { get; set; }
+        public int stageID { get; set; }*/
+        public string stageName { get; set; }
+
+        // 玩家信息
+        public int roleID { get; set; }
+        public string account { get; set; }
+        public PlayerStateEnum playerState = PlayerStateEnum.None; // 玩家状态
+        public EntityDriverEnum driverEnum = EntityDriverEnum.None; // 实体驱动类型
+
+        public float PosX { get; set; }
+        public float PosZ { get; set; }
+    }
+
+    public class ExitGame
+    {
+        public int roleID { get; set; }
+        public string account { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using RC_IOCPNet;
 using RCCommon;
 using RCProtocol;
 using System.Collections.Concurrent;
+using System.Numerics;
 
 // 游戏内网络同步服务
 namespace ARPGServer
@@ -23,6 +24,9 @@ namespace ARPGServer
 
             AddServerHandler(CMD.OnClient2GameConnected, OnClient2GameConnected);
             AddServerHandler(CMD.OnClient2GameDisConnected, OnClient2GameDisConnected);
+
+            AddServerHandler(CMD.AffirmEnterStage, AffirmEnterStage);
+            AddServerHandler(CMD.ExitGame, ExitGame);
 
             gameNet = new();
             gameNet.StartAsServer("127.0.0.1", 19000, 5000);
@@ -57,6 +61,31 @@ namespace ARPGServer
         void OnClient2GameDisConnected(GamePackage pkg)
         {
             this.LogRed($"{pkg.token.tokenID} new client Gameworld Disconnected!");
+        }
+
+        /// <summary>
+        /// 确认进入场景
+        /// </summary>
+        /// <param name="pkg"></param>
+        void AffirmEnterStage(GamePackage pkg)
+        {
+            AffirmEnterStage affirmEnterStage = pkg.message.affirmEnterStage;
+            GameEntity entity = new GameEntity(affirmEnterStage.roleID, affirmEnterStage.account, affirmEnterStage.stageName)
+            {
+                entityPos = new Vector3(affirmEnterStage.PosX, 0, affirmEnterStage.PosZ),
+                gameToken = pkg.token
+            };
+            ARPGProcess.Instance.entitySystem.AddEntity(entity);
+        }
+
+        /// <summary>
+        /// 退出游戏
+        /// </summary>
+        /// <param name="pkg"></param>
+        void ExitGame(GamePackage pkg)
+        {
+            int exitRoleID = pkg.message.exitGame.roleID;
+            ARPGProcess.Instance.entitySystem.ExitEntityByID(exitRoleID);
         }
 
         //-------------Tool Functions-------------//

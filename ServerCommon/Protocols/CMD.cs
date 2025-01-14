@@ -13,6 +13,7 @@
         RespAccountLogin, // Response Account Login.
         NtfEnterStage, // Notify Enter Stage.
         AffirmEnterStage, // Affirm Enter Stage.
+        ExitGame, // Exit Game.
 
         InstantiateRole, // Instantiate Role.
 

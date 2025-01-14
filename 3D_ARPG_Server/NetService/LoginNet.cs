@@ -128,14 +128,18 @@ namespace ARPGServer
                     }
                 });
 
+                // 创建角色 Instantiate Role
                 package.token.SendMsg(new NetMsg
                 {
                     cmd = CMD.InstantiateRole,
                     instantiateRole = new InstantiateRole
                     {
                         roleID = GetRoleID(),
+                        account = reqAccountLogin.account,
+                        playerState = PlayerStateEnum.Online,
+                        driverEnum = EntityDriverEnum.Client,
                         PosX = 1,
-                        PosZ = 1
+                        PosZ = 1,
                     }
                 });
             }

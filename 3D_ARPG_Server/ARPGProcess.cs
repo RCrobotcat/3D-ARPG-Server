@@ -10,8 +10,12 @@ namespace ARPGServer
 {
     public class ARPGProcess : ServerProcess<ARPGProcess>
     {
+        // Services
         public LoginNet loginNet;
         public GameNet gameNet;
+
+        // Systems
+        public EntitySystem entitySystem;
 
         public override void Awake()
         {
@@ -20,6 +24,9 @@ namespace ARPGServer
 
             gameNet = new GameNet();
             AddServceOrSystem(gameNet);
+
+            entitySystem = new EntitySystem();
+            AddServceOrSystem(entitySystem);
 
             base.Awake();
         }
