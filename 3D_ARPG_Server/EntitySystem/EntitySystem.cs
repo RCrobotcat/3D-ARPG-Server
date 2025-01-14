@@ -1,4 +1,5 @@
 ﻿using RCCommon;
+using RCProtocol;
 
 namespace ARPGServer
 {
@@ -30,6 +31,13 @@ namespace ARPGServer
             }
         }
         /// <summary>
+        /// 通过ID获取实体
+        /// </summary>
+        public GameEntity GetEntityByID(int id)
+        {
+            return currentEntities.Find(e => e.roleID == id);
+        }
+        /// <summary>
         /// 移除实体
         /// </summary>
         public void RemoveEntity(GameEntity entity)
@@ -37,7 +45,35 @@ namespace ARPGServer
             if (currentEntities.Contains(entity))
             {
                 currentEntities.Remove(entity);
+                SendToAll(new NetMsg // 通知所有客户端移除实体
+                {
+                    cmd = CMD.RemoveEntity,
+                    removeEntity = new RemoveEntity
+                    {
+                        roleID = entity.roleID
+                    }
+                });
                 this.LogCyan($"Number of Current Entities in the GameWorld: {currentEntities.Count}");
+            }
+        }
+
+        /// <summary>
+        /// 同步所有实体
+        /// </summary>
+        public void SendToAll(NetMsg msg, GameToken selfToken)
+        {
+            foreach (var entity in currentEntities)
+            {
+                if (entity.gameToken != null && entity.gameToken != selfToken)
+                    entity.gameToken.SendMsg(msg);
+            }
+        }
+        public void SendToAll(NetMsg msg)
+        {
+            foreach (var entity in currentEntities)
+            {
+                if (entity.gameToken != null)
+                    entity.gameToken.SendMsg(msg);
             }
         }
 

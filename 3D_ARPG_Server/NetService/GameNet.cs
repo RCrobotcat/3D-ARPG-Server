@@ -28,6 +28,8 @@ namespace ARPGServer
             AddServerHandler(CMD.AffirmEnterStage, AffirmEnterStage);
             AddServerHandler(CMD.ExitGame, ExitGame);
 
+            AddServerHandler(CMD.SyncMovePos, SyncMovePos);
+
             gameNet = new();
             gameNet.StartAsServer("127.0.0.1", 19000, 5000);
         }
@@ -66,7 +68,6 @@ namespace ARPGServer
         /// <summary>
         /// 确认进入场景
         /// </summary>
-        /// <param name="pkg"></param>
         void AffirmEnterStage(GamePackage pkg)
         {
             AffirmEnterStage affirmEnterStage = pkg.message.affirmEnterStage;
@@ -79,13 +80,27 @@ namespace ARPGServer
         }
 
         /// <summary>
+        /// 同步移动位置
+        /// </summary>
+        void SyncMovePos(GamePackage pkg)
+        {
+            Vector3 targetPos = new Vector3(pkg.message.syncMovePos.PosX, 0, pkg.message.syncMovePos.PosZ);
+
+            int roleID = pkg.message.syncMovePos.roleID;
+            GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(roleID);
+            if (entity != null)
+                entity.MoveComp.entityTargetPos = targetPos;
+        }
+
+        /// <summary>
         /// 退出游戏
         /// </summary>
-        /// <param name="pkg"></param>
         void ExitGame(GamePackage pkg)
         {
             int exitRoleID = pkg.message.exitGame.roleID;
+            string exitAccount = pkg.message.exitGame.account;
             ARPGProcess.Instance.entitySystem.ExitEntityByID(exitRoleID);
+            ARPGProcess.Instance.loginNet.RemoveAccountToken(exitAccount);
         }
 
         //-------------Tool Functions-------------//

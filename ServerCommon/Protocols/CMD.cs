@@ -14,6 +14,7 @@
         NtfEnterStage, // Notify Enter Stage.
         AffirmEnterStage, // Affirm Enter Stage.
         ExitGame, // Exit Game.
+        RemoveEntity, // Remove Entity. 移除实体
 
         InstantiateRole, // Instantiate Role.
 

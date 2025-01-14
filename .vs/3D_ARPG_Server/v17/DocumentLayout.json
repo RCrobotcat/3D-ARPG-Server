@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\tokens\\logintoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\tokens\\logintoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\tokens\\gametoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\tokens\\gametoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{162F693C-13C8-4C96-AF78-A0AC0214933F}|ServerCommon\\ServerCommon.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\servercommon\\protocols\\netmsg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{162F693C-13C8-4C96-AF78-A0AC0214933F}|ServerCommon\\ServerCommon.csproj|solutionrelative:servercommon\\protocols\\netmsg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\netservice\\gamenet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\netservice\\gamenet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\entitysystem\\entitysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\entitysystem\\entitysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\netservice\\loginnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\netservice\\loginnet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\entitysystem\\gameentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\entitysystem\\gameentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\netservice\\gamenet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\netservice\\gamenet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\arpgprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\arpgprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\3d_arpg_server\\entitysystem\\entitycomp\\movecomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DD081F2-D6AE-4CCB-8209-7FBCB9E58BB9}|3D_ARPG_Server\\3D_ARPG_Server.csproj|solutionrelative:3d_arpg_server\\entitysystem\\entitycomp\\movecomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{162F693C-13C8-4C96-AF78-A0AC0214933F}|ServerCommon\\ServerCommon.csproj|c:\\users\\25190\\desktop\\course\\3darpgserver\\3d_arpg_server\\servercommon\\protocols\\netmsg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{162F693C-13C8-4C96-AF78-A0AC0214933F}|ServerCommon\\ServerCommon.csproj|solutionrelative:servercommon\\protocols\\netmsg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "GameNet.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\NetService\\GameNet.cs",
               "RelativeDocumentMoniker": "3D_ARPG_Server\\NetService\\GameNet.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\NetService\\GameNet.cs",
               "RelativeToolTip": "3D_ARPG_Server\\NetService\\GameNet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T05:57:42.587Z",
               "IsPinned": true,
@@ -60,80 +56,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "MoveComp.cs",
+              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\EntitySystem\\EntityComp\\MoveComp.cs",
+              "RelativeDocumentMoniker": "3D_ARPG_Server\\EntitySystem\\EntityComp\\MoveComp.cs",
+              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\EntitySystem\\EntityComp\\MoveComp.cs",
+              "RelativeToolTip": "3D_ARPG_Server\\EntitySystem\\EntityComp\\MoveComp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T16:46:39.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ARPGProcess.cs",
+              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\ARPGProcess.cs",
+              "RelativeDocumentMoniker": "3D_ARPG_Server\\ARPGProcess.cs",
+              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\ARPGProcess.cs",
+              "RelativeToolTip": "3D_ARPG_Server\\ARPGProcess.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T15:40:56.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "GameEntity.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\EntitySystem\\GameEntity.cs",
               "RelativeDocumentMoniker": "3D_ARPG_Server\\EntitySystem\\GameEntity.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\EntitySystem\\GameEntity.cs",
               "RelativeToolTip": "3D_ARPG_Server\\EntitySystem\\GameEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T11:44:18.105Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginNet.cs",
-              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\NetService\\LoginNet.cs",
-              "RelativeDocumentMoniker": "3D_ARPG_Server\\NetService\\LoginNet.cs",
-              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\NetService\\LoginNet.cs",
-              "RelativeToolTip": "3D_ARPG_Server\\NetService\\LoginNet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIkAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T06:09:34.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "EntitySystem.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\EntitySystem\\EntitySystem.cs",
               "RelativeDocumentMoniker": "3D_ARPG_Server\\EntitySystem\\EntitySystem.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\EntitySystem\\EntitySystem.cs",
               "RelativeToolTip": "3D_ARPG_Server\\EntitySystem\\EntitySystem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T10:54:20.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "NetMsg.cs",
               "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\ServerCommon\\Protocols\\NetMsg.cs",
               "RelativeDocumentMoniker": "ServerCommon\\Protocols\\NetMsg.cs",
               "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\ServerCommon\\Protocols\\NetMsg.cs",
               "RelativeToolTip": "ServerCommon\\Protocols\\NetMsg.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwD0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T10:29:07.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameToken.cs",
-              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\Tokens\\GameToken.cs",
-              "RelativeDocumentMoniker": "3D_ARPG_Server\\Tokens\\GameToken.cs",
-              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\Tokens\\GameToken.cs",
-              "RelativeToolTip": "3D_ARPG_Server\\Tokens\\GameToken.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T06:03:48.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginToken.cs",
-              "DocumentMoniker": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\Tokens\\LoginToken.cs",
-              "RelativeDocumentMoniker": "3D_ARPG_Server\\Tokens\\LoginToken.cs",
-              "ToolTip": "C:\\Users\\25190\\Desktop\\course\\3DARPGServer\\3D_ARPG_Server\\3D_ARPG_Server\\Tokens\\LoginToken.cs",
-              "RelativeToolTip": "3D_ARPG_Server\\Tokens\\LoginToken.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-12T05:28:27.008Z",
               "EditorCaption": ""
             }
           ]

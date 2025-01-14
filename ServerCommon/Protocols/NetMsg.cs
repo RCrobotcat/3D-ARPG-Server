@@ -14,9 +14,7 @@ namespace RCProtocol
         }
 
         public NtfEnterStage ntfEnterStage { get; set; }
-
         public InstantiateRole instantiateRole { get; set; }
-
         public AffirmEnterStage affirmEnterStage { get; set; }
         public ExitGame exitGame { get; set; }
     }

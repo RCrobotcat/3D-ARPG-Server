@@ -83,7 +83,6 @@ namespace ARPGServer
         {
             this.LogGreen($"{package.token.tokenID} new client connected!");
         }
-
         void OnClient2LoginDisConnected(LoginPackage package)
         {
             this.LogRed($"{package.token.tokenID} client disconnected!");
@@ -94,6 +93,13 @@ namespace ARPGServer
         {
             get => tempUid++;
             set => tempUid = value;
+        }
+        public void RemoveAccountToken(string account)
+        {
+            if (Account2Tokens.ContainsKey(account))
+            {
+                Account2Tokens.Remove(account);
+            }
         }
         void ReqAccountLogin(LoginPackage package)
         {

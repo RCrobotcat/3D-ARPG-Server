@@ -7,8 +7,23 @@ namespace RCProtocol
         public string token { get; set; }
     }
 
+    public class SyncMovePos
+    {
+        public int roleID { get; set; }
+        public string account { get; set; }
+        public float PosX { get; set; }
+        public float PosZ { get; set; }
+    }
+
+    public class RemoveEntity
+    {
+        public int roleID { get; set; }
+    }
+
     public partial class NetMsg
     {
         public ReqTokenAccess reqTokenAccess { get; set; }
+        public SyncMovePos syncMovePos { get; set; }
+        public RemoveEntity removeEntity { get; set; }
     }
 }

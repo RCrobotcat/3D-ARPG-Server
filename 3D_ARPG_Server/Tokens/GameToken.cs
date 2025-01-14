@@ -27,7 +27,7 @@ namespace ARPGServer
 
         protected override void OnReceiveMsg(NetMsg msg)
         {
-            this.Log($"Token: {tokenID} => Receive UnityClient Gameworld Command:{msg.cmd}");
+            // this.Log($"Token: {tokenID} => Receive UnityClient Gameworld Command:{msg.cmd}");
             ARPGProcess.Instance.gameNet.AddServerPackages(new GamePackage(this, msg));
         }
     }
