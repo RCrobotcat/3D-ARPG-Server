@@ -85,11 +85,15 @@ namespace ARPGServer
         void SyncMovePos(GamePackage pkg)
         {
             Vector3 targetPos = new Vector3(pkg.message.syncMovePos.PosX, 0, pkg.message.syncMovePos.PosZ);
+            Vector3 targetDir = new Vector3(pkg.message.syncMovePos.dirX, pkg.message.syncMovePos.dirY, pkg.message.syncMovePos.dirZ);
 
             int roleID = pkg.message.syncMovePos.roleID;
             GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(roleID);
             if (entity != null)
+            {
                 entity.MoveComp.entityTargetPos = targetPos;
+                entity.MoveComp.entityTargetDir = targetDir;
+            }
         }
 
         /// <summary>

@@ -13,6 +13,10 @@ namespace RCProtocol
         public string account { get; set; }
         public float PosX { get; set; }
         public float PosZ { get; set; }
+
+        public float dirX { get; set; }
+        public float dirY { get; set; }
+        public float dirZ { get; set; }
     }
 
     public class RemoveEntity

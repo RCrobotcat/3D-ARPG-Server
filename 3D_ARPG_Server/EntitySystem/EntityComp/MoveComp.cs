@@ -8,6 +8,7 @@ namespace ARPGServer
     public class MoveComp : EntityComp, IAwake, IUpdate
     {
         public Vector3 entityTargetPos; // 实体目标位置
+        public Vector3 entityTargetDir; // 实体目标方向
 
         public void Awake()
         {
@@ -16,10 +17,11 @@ namespace ARPGServer
 
         public void Update()
         {
-            if (parent.entityPos == entityTargetPos)
+            if (Vector3.Distance(parent.entityPos, entityTargetPos) <= 0.01f)
                 return;
 
-            parent.entityPos = entityTargetPos;
+            parent.entityPos = Vector3.Lerp(parent.entityPos, entityTargetPos, 0.1f);
+            parent.entityDir = Vector3.Lerp(parent.entityDir, entityTargetDir, 0.05f);
             SendSyncMovePos();
         }
 
@@ -36,7 +38,10 @@ namespace ARPGServer
                     roleID = parent.roleID,
                     account = parent.account,
                     PosX = parent.entityPos.X,
-                    PosZ = parent.entityPos.Z
+                    PosZ = parent.entityPos.Z,
+                    dirX = parent.entityDir.X,
+                    dirY = parent.entityDir.Y,
+                    dirZ = parent.entityDir.Z
                 }
             };
             ARPGProcess.Instance.entitySystem.SendToAll(netMsg, parent.gameToken);

@@ -13,6 +13,7 @@ namespace ARPGServer
         public GameToken gameToken; // 游戏网络会话
 
         public Vector3 entityPos; // 实体位置
+        public Vector3 entityDir; // 实体方向
 
         public int roleID; // 玩家ID
         public string account; // 玩家账号
