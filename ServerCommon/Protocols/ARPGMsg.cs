@@ -17,6 +17,8 @@ namespace RCProtocol
         public float dirX { get; set; }
         public float dirY { get; set; }
         public float dirZ { get; set; }
+
+        public long timestamp { get; set; }
     }
 
     public class RemoveEntity

@@ -5,24 +5,27 @@ using System.Numerics;
 // 实体移动同步组件
 namespace ARPGServer
 {
-    public class MoveComp : EntityComp, IAwake, IUpdate
+    public class MoveComp : EntityComp, IUpdate
     {
         public Vector3 entityTargetPos; // 实体目标位置
         public Vector3 entityTargetDir; // 实体目标方向
 
-        public void Awake()
+        private System.Timers.Timer syncTimer;
+        /// <summary>
+        /// 初始化同步定时器
+        /// </summary>
+        public void InitTimer()
         {
-            SendSyncMovePos();
+            // 初始化同步定时器，每隔33ms（约30次/秒）发送一次位置更新
+            syncTimer = new System.Timers.Timer(33);
+            syncTimer.Elapsed += (sender, e) => SendSyncMovePos();
+            syncTimer.Start();
         }
 
         public void Update()
         {
-            if (Vector3.Distance(parent.entityPos, entityTargetPos) <= 0.01f)
-                return;
-
-            parent.entityPos = Vector3.Lerp(parent.entityPos, entityTargetPos, 0.1f);
-            parent.entityDir = Vector3.Lerp(parent.entityDir, entityTargetDir, 0.05f);
-            SendSyncMovePos();
+            parent.entityPos = entityTargetPos;
+            parent.entityDir = entityTargetDir;
         }
 
         /// <summary>
@@ -30,6 +33,9 @@ namespace ARPGServer
         /// </summary>
         void SendSyncMovePos()
         {
+            if (parent.playerState == PlayerStateEnum.Offline || parent.playerState == PlayerStateEnum.None)
+                return;
+
             NetMsg netMsg = new NetMsg
             {
                 cmd = CMD.SyncMovePos,
@@ -41,7 +47,8 @@ namespace ARPGServer
                     PosZ = parent.entityPos.Z,
                     dirX = parent.entityDir.X,
                     dirY = parent.entityDir.Y,
-                    dirZ = parent.entityDir.Z
+                    dirZ = parent.entityDir.Z,
+                    timestamp = DateTime.UtcNow.Ticks
                 }
             };
             ARPGProcess.Instance.entitySystem.SendToAll(netMsg, parent.gameToken);

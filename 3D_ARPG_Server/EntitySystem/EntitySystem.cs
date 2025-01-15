@@ -64,7 +64,7 @@ namespace ARPGServer
         {
             foreach (var entity in currentEntities)
             {
-                if (entity.gameToken != null && entity.gameToken != selfToken)
+                if (entity != null && entity.gameToken != null && entity.gameToken != selfToken)
                     entity.gameToken.SendMsg(msg);
             }
         }

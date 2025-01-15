@@ -24,15 +24,16 @@ namespace ARPGServer
         MoveComp moveComp;
         public MoveComp MoveComp { get => moveComp; }
 
-        public GameEntity() { }
-
         public GameEntity(int id, string account, string stageName)
         {
             this.roleID = id;
             this.account = account;
             this.stageName = stageName;
 
+            playerState = PlayerStateEnum.Online;
+
             moveComp = AddComp<MoveComp>();
+            moveComp.InitTimer();
         }
 
         public override void Destroy()
@@ -40,7 +41,7 @@ namespace ARPGServer
             base.Destroy();
 
             gameToken = null;
-            playerState = PlayerStateEnum.None;
+            playerState = PlayerStateEnum.Offline;
             driverEnum = EntityDriverEnum.None;
             ARPGProcess.Instance.entitySystem.RemoveEntity(this);
         }
