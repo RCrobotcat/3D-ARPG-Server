@@ -16,8 +16,8 @@ namespace ARPGServer
         /// </summary>
         public void InitTimer()
         {
-            // 初始化同步定时器，每隔33ms（约30次/秒）发送一次位置更新
-            syncTimer = new System.Timers.Timer(33);
+            // 初始化同步定时器，每隔53ms发送一次位置更新
+            syncTimer = new System.Timers.Timer(53);
             syncTimer.Elapsed += (sender, e) => SendSyncMovePos();
             syncTimer.Start();
         }

@@ -62,6 +62,8 @@ namespace ARPGServer
         /// </summary>
         public void SendToAll(NetMsg msg, GameToken selfToken)
         {
+            if (currentEntities.Count == 0) return;
+
             foreach (var entity in currentEntities)
             {
                 if (entity != null && entity.gameToken != null && entity.gameToken != selfToken)
