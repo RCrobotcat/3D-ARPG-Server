@@ -29,6 +29,7 @@ namespace ARPGServer
             AddServerHandler(CMD.ExitGame, ExitGame);
 
             AddServerHandler(CMD.SyncMovePos, SyncMovePos);
+            AddServerHandler(CMD.SyncAnimationState, SyncAnimationState);
 
             gameNet = new();
             gameNet.StartAsServer("127.0.0.1", 19000, 5000);
@@ -91,8 +92,21 @@ namespace ARPGServer
             GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(roleID);
             if (entity != null)
             {
-                entity.MoveComp.entityTargetPos = targetPos;
-                entity.MoveComp.entityTargetDir = targetDir;
+                entity.GetComp<MoveComp>().entityTargetPos = targetPos;
+                entity.GetComp<MoveComp>().entityTargetDir = targetDir;
+            }
+        }
+
+        /// <summary>
+        /// 同步动画状态
+        /// </summary>
+        void SyncAnimationState(GamePackage msg)
+        {
+            SyncAnimationState syncAnimationState = msg.message.syncAnimationState;
+            GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(syncAnimationState.roleID);
+            if (entity != null)
+            {
+                entity.GetComp<AnimationComp>().animationState = syncAnimationState.animationStateEnum;
             }
         }
 

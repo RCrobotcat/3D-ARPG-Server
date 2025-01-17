@@ -26,6 +26,8 @@
         RespTokenAccess, // Response Token Access.
 
         SyncMovePos, // Synchronize Move Position. 客户端同步移动位置
+        SyncAnimationState, // Synchronize Animation State. 客户端同步动画状态
+
         PushStateData, // Push State Data. 推送状态数据
 
         #region Battle进程内部协议 Battle process internal protocol 

@@ -24,6 +24,9 @@ namespace ARPGServer
         MoveComp moveComp;
         public MoveComp MoveComp { get => moveComp; }
 
+        AnimationComp animationComp;
+        public AnimationComp AnimationComp { get => animationComp; }
+
         public GameEntity(int id, string account, string stageName)
         {
             this.roleID = id;
@@ -34,6 +37,8 @@ namespace ARPGServer
 
             moveComp = AddComp<MoveComp>();
             moveComp.InitTimer();
+
+            animationComp = AddComp<AnimationComp>();
         }
 
         public override void Destroy()

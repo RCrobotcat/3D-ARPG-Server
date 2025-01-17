@@ -21,6 +21,14 @@ namespace RCProtocol
         public long timestamp { get; set; }
     }
 
+    public class SyncAnimationState
+    {
+        public int roleID { get; set; }
+        public string account { get; set; }
+
+        public AnimationStateEnum animationStateEnum { get; set; }
+    }
+
     public class RemoveEntity
     {
         public int roleID { get; set; }
@@ -30,6 +38,21 @@ namespace RCProtocol
     {
         public ReqTokenAccess reqTokenAccess { get; set; }
         public SyncMovePos syncMovePos { get; set; }
+        public SyncAnimationState syncAnimationState { get; set; }
         public RemoveEntity removeEntity { get; set; }
+    }
+
+    public enum AnimationStateEnum
+    {
+        None,
+        Sprint,
+        Roll,
+
+        // Combo Attack
+        Combo_1,
+        Combo_2,
+        Combo_3,
+        Combo_4,
+        Combo_5,
     }
 }

@@ -60,9 +60,12 @@ namespace ARPGServer
         /// <summary>
         /// 同步所有实体
         /// </summary>
-        public void SendToAll(NetMsg msg, GameToken selfToken)
+        public void SendToAll(NetMsg msg, GameToken selfToken, Action onSendComplete = null)
         {
             if (currentEntities.Count == 0) return;
+
+            /* if (msg.cmd == CMD.SyncAnimationState)
+                 this.LogYellow($"SendToAll: {msg.syncAnimationState.animationStateEnum}");*/
 
             foreach (var entity in currentEntities)
             {
