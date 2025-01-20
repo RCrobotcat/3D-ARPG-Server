@@ -17,6 +17,8 @@
         RemoveEntity, // Remove Entity. 移除实体
 
         InstantiateRole, // Instantiate Role.
+        SwitchWeapon, // Switch Weapon.
+        UnEquipWeapon, // UnEquip Weapon.
 
         NtfRoleData, // Notify Role Data.
 

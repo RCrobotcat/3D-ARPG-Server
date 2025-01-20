@@ -31,6 +31,9 @@ namespace ARPGServer
             AddServerHandler(CMD.SyncMovePos, SyncMovePos);
             AddServerHandler(CMD.SyncAnimationState, SyncAnimationState);
 
+            AddServerHandler(CMD.SwitchWeapon, SwitchWeapon);
+            AddServerHandler(CMD.UnEquipWeapon, UnEquipWeapon);
+
             gameNet = new();
             gameNet.StartAsServer("127.0.0.1", 19000, 5000);
         }
@@ -78,6 +81,25 @@ namespace ARPGServer
                 gameToken = pkg.token
             };
             ARPGProcess.Instance.entitySystem.AddEntity(entity);
+        }
+
+        /// <summary>
+        /// 切换武器
+        /// </summary>
+        void SwitchWeapon(GamePackage pkg)
+        {
+            SwitchWeapon switchWeapon = pkg.message.switchWeapon;
+            GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(switchWeapon.roleID);
+            entity.GetComp<WeaponAndArmorComp>().currentWeaponName = switchWeapon.weaponName;
+        }
+        /// <summary>
+        /// 卸下武器
+        /// </summary>
+        void UnEquipWeapon(GamePackage pkg)
+        {
+            UnEquipWeapon unEquipWeapon = pkg.message.unEquipWeapon;
+            GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(unEquipWeapon.roleID);
+            entity.GetComp<WeaponAndArmorComp>().currentWeaponName = "";
         }
 
         /// <summary>

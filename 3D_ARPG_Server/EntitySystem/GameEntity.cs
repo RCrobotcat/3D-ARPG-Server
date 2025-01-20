@@ -27,6 +27,9 @@ namespace ARPGServer
         AnimationComp animationComp;
         public AnimationComp AnimationComp { get => animationComp; }
 
+        WeaponAndArmorComp weaponAndArmorComp;
+        public WeaponAndArmorComp WeaponAndArmorComp { get => weaponAndArmorComp; }
+
         public GameEntity(int id, string account, string stageName)
         {
             this.roleID = id;
@@ -39,6 +42,8 @@ namespace ARPGServer
             moveComp.InitTimer();
 
             animationComp = AddComp<AnimationComp>();
+
+            weaponAndArmorComp = AddComp<WeaponAndArmorComp>();
         }
 
         public override void Destroy()

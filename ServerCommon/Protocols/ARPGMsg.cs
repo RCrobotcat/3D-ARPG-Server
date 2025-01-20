@@ -29,6 +29,18 @@ namespace RCProtocol
         public AnimationStateEnum animationStateEnum { get; set; }
     }
 
+    public class SwitchWeapon
+    {
+        public int roleID { get; set; }
+        public string account { get; set; }
+        public string weaponName { get; set; }
+    }
+    public class UnEquipWeapon
+    {
+        public int roleID { get; set; }
+        public string account { get; set; }
+    }
+
     public class RemoveEntity
     {
         public int roleID { get; set; }
@@ -39,6 +51,8 @@ namespace RCProtocol
         public ReqTokenAccess reqTokenAccess { get; set; }
         public SyncMovePos syncMovePos { get; set; }
         public SyncAnimationState syncAnimationState { get; set; }
+        public SwitchWeapon switchWeapon { get; set; }
+        public UnEquipWeapon unEquipWeapon { get; set; }
         public RemoveEntity removeEntity { get; set; }
     }
 
