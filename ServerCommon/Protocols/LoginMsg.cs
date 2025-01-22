@@ -79,5 +79,14 @@ namespace RCProtocol
         public RespRoleToken respRoleToken { get; set; }
         public ReqAccountLogin reqAccountLogin { get; set; } // Common Response
         public NtfRoleData ntfRoleData { get; set; }
+
+        public ReqRoleEnter reqRoleEnter { get; set; }
+    }
+
+    public class ReqRoleEnter
+    {
+        public int roleID { get; set; }
+        public string account { get; set; }
+        public string selectedRoleName { get; set; }
     }
 }

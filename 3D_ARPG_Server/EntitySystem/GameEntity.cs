@@ -16,6 +16,7 @@ namespace ARPGServer
         public Vector3 entityDir; // 实体方向
 
         public int roleID; // 玩家ID
+        public string roleName; // 玩家选中的角色名称
         public string account; // 玩家账号
         public string stageName; // 场景名称
 

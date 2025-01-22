@@ -38,6 +38,8 @@ namespace RCProtocol
     public class InstantiateRole
     {
         public int roleID { get; set; }
+        public string roleName { get; set; }
+
         public string account { get; set; }
         public PlayerStateEnum playerState = PlayerStateEnum.None; // 玩家状态
         public EntityDriverEnum driverEnum = EntityDriverEnum.None; // 实体驱动类型
@@ -68,6 +70,7 @@ namespace RCProtocol
 
         // 玩家信息
         public int roleID { get; set; }
+        public string roleName { get; set; } // 玩家选中的角色名称
         public string account { get; set; }
         public PlayerStateEnum playerState = PlayerStateEnum.None; // 玩家状态
         public EntityDriverEnum driverEnum = EntityDriverEnum.None; // 实体驱动类型

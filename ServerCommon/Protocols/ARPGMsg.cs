@@ -10,6 +10,7 @@ namespace RCProtocol
     public class SyncMovePos
     {
         public int roleID { get; set; }
+        public string roleName { get; set; }
         public string account { get; set; }
         public float PosX { get; set; }
         public float PosZ { get; set; }

@@ -77,6 +77,7 @@ namespace ARPGServer
             AffirmEnterStage affirmEnterStage = pkg.message.affirmEnterStage;
             GameEntity entity = new GameEntity(affirmEnterStage.roleID, affirmEnterStage.account, affirmEnterStage.stageName)
             {
+                roleName = affirmEnterStage.roleName,
                 entityPos = new Vector3(affirmEnterStage.PosX, 0, affirmEnterStage.PosZ),
                 gameToken = pkg.token
             };

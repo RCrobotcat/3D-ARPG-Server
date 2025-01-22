@@ -42,6 +42,7 @@ namespace ARPGServer
                 syncMovePos = new SyncMovePos
                 {
                     roleID = parent.roleID,
+                    roleName = parent.roleName,
                     account = parent.account,
                     PosX = parent.entityPos.X,
                     PosZ = parent.entityPos.Z,

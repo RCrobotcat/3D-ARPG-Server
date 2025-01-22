@@ -16,6 +16,9 @@
         ExitGame, // Exit Game.
         RemoveEntity, // Remove Entity. 移除实体
 
+        ReqRoleEnter, // Request Role Enter.
+        RespRoleEnter, // Response Role Enter.
+
         InstantiateRole, // Instantiate Role.
         SwitchWeapon, // Switch Weapon.
         UnEquipWeapon, // UnEquip Weapon.

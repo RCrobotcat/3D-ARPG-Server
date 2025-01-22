@@ -38,6 +38,8 @@ namespace ARPGServer
             AddServerHandler(CMD.ReqAccountLogin, ReqAccountLogin);
             AddServerHandler(CMD.ReqRoleToken, ReqRoleToken);
 
+            AddServerHandler(CMD.ReqRoleEnter, ReqRoleEnter);
+
             loginNet = new();
             loginNet.StartAsServer("127.0.0.1", 18000, 5000);
         }
@@ -130,12 +132,12 @@ namespace ARPGServer
                     {
                         // stageID = 2
                         mode = EnterStageMode.Login,
-                        stageName = "TestScene"
+                        stageName = "RoleSelectScene"
                     }
                 });
 
                 // 创建角色 Instantiate Role
-                package.token.SendMsg(new NetMsg
+                /*package.token.SendMsg(new NetMsg
                 {
                     cmd = CMD.InstantiateRole,
                     instantiateRole = new InstantiateRole
@@ -147,13 +149,59 @@ namespace ARPGServer
                         PosX = 1,
                         PosZ = 1,
                     }
-                });
+                });*/
             }
         }
         int roleId = 101;
         public int GetRoleID()
         {
             return roleId++;
+        }
+
+        /// <summary>
+        /// 选择角色后请求角色进入 
+        /// Request Role Enter
+        /// </summary>
+        /// <param name="pkg"></param>
+        void ReqRoleEnter(LoginPackage pkg)
+        {
+            ReqRoleEnter reqRoleEnter = pkg.message.reqRoleEnter;
+
+            NetMsg response = new NetMsg(CMD.RespRoleEnter);
+            // TODO: 校验角色
+            pkg.token.SendMsg(response);
+
+            if (response.errorCode == ErrorCode.None)
+            {
+                // 进入游戏场景
+                NetMsg enterMsg = new NetMsg
+                {
+                    cmd = CMD.NtfEnterStage,
+                    ntfEnterStage = new NtfEnterStage
+                    {
+                        // stageID = 2
+                        mode = EnterStageMode.Login,
+                        stageName = "TestScene"
+                    }
+                };
+                pkg.token.SendMsg(enterMsg);
+
+                // 创建角色 Instantiate Role
+                pkg.token.SendMsg(new NetMsg
+                {
+                    cmd = CMD.InstantiateRole,
+                    instantiateRole = new InstantiateRole
+                    {
+                        roleID = GetRoleID(),
+                        roleName = reqRoleEnter.selectedRoleName,
+                        account = reqRoleEnter.account,
+                        playerState = PlayerStateEnum.Online,
+                        driverEnum = EntityDriverEnum.Client,
+                        PosX = 1,
+                        PosZ = 1,
+                    }
+                });
+            }
         }
 
         // 请求角色Token Request Role Token
