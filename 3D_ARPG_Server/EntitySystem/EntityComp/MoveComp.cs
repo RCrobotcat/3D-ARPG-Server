@@ -44,6 +44,7 @@ namespace ARPGServer
                     roleID = parent.roleID,
                     roleName = parent.roleName,
                     account = parent.account,
+                    weaponName = parent.GetComp<WeaponAndArmorComp>().currentWeaponName,
                     PosX = parent.entityPos.X,
                     PosZ = parent.entityPos.Z,
                     dirX = parent.entityDir.X,

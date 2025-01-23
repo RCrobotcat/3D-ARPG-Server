@@ -20,7 +20,7 @@ namespace ARPGServer
             }
         }
 
-        void SendSwitchWeapon()
+        public void SendSwitchWeapon()
         {
             NetMsg msg = new NetMsg
             {

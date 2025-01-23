@@ -94,5 +94,16 @@ namespace ARPGServer
                 entity.Destroy();
             }
         }
+
+        /// <summary>
+        /// 所有实体切换武器
+        /// </summary>
+        public void AllEntitySwitchWeapon()
+        {
+            foreach (var entity in currentEntities)
+            {
+                entity.GetComp<WeaponAndArmorComp>().SendSwitchWeapon();
+            }
+        }
     }
 }

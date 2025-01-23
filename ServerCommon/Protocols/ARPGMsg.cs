@@ -12,6 +12,9 @@ namespace RCProtocol
         public int roleID { get; set; }
         public string roleName { get; set; }
         public string account { get; set; }
+
+        public string weaponName { get; set; }
+
         public float PosX { get; set; }
         public float PosZ { get; set; }
 
