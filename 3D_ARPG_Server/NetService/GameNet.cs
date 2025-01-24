@@ -79,7 +79,8 @@ namespace ARPGServer
             {
                 roleName = affirmEnterStage.roleName,
                 entityPos = new Vector3(affirmEnterStage.PosX, 0, affirmEnterStage.PosZ),
-                gameToken = pkg.token
+                gameToken = pkg.token,
+                driverEnum = EntityDriverEnum.Client
             };
             ARPGProcess.Instance.entitySystem.AddEntity(entity);
         }

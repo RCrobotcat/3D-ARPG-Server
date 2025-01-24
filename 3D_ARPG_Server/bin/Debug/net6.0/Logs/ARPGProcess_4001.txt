@@ -1,179 +1,24 @@
-[L]# 20:00:22-623  Tid:1 >> Args:
-[L]# 20:00:22-629  Tid:1 >> Launch ARPGProcess ==> ID: 4001
-[L]# 20:00:22-736  Tid:1 >> Server Start...
-[L]# 20:00:22-759  Tid:1 >> Server Start...
-[L]# 20:00:31-078  Tid:8 >> Token: 4999 => UnityClient Login Connection: True
-[L]# 20:00:31-117  Tid:1 >> 4999 new client connected!
-[L]# 20:00:31-419  Tid:8 >> Token: 4999 => UnityClient Gameworld Connection: True
-[L]# 20:00:31-425  Tid:1 >> 4999 new client Gameworld connected!
-[L]# 20:00:33-404  Tid:8 >> Token: 4998 => UnityClient Login Connection: True
-[L]# 20:00:33-414  Tid:1 >> 4998 new client connected!
-[L]# 20:00:33-465  Tid:8 >> Token: 4998 => UnityClient Gameworld Connection: True
-[L]# 20:00:33-491  Tid:1 >> 4998 new client Gameworld connected!
-[L]# 20:00:34-161  Tid:8 >> Token: 4999 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:00:34-200  Tid:1 >> Login Account: asfasds.
-[L]# 20:00:34-526  Tid:8 >> Token: 4997 => UnityClient Gameworld Connection: True
-[L]# 20:00:34-548  Tid:1 >> 4997 new client Gameworld connected!
-[L]# 20:00:35-589  Tid:8 >> Token: 4999 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:00:35-665  Tid:8 >> Token: 4996 => UnityClient Gameworld Connection: True
-[L]# 20:00:35-666  Tid:1 >> 4996 new client Gameworld connected!
-[L]# 20:00:35-714  Tid:1 >> Number of Current Entities in the GameWorld: 1
-[L]# 20:00:40-810  Tid:7 >> Token: 4998 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:00:40-832  Tid:1 >> Login Account: asfsads.
-[L]# 20:00:40-992  Tid:8 >> Token: 4995 => UnityClient Gameworld Connection: True
-[L]# 20:00:40-999  Tid:1 >> 4995 new client Gameworld connected!
-[L]# 20:00:41-734  Tid:8 >> Token: 4998 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:00:41-815  Tid:8 >> Token: 4994 => UnityClient Gameworld Connection: True
-[L]# 20:00:41-838  Tid:1 >> 4994 new client Gameworld connected!
-[L]# 20:00:41-841  Tid:1 >> Number of Current Entities in the GameWorld: 2
-[W]# 20:01:01-018  Tid:13 >> TokenID:4999 Close:1
-[W]# 20:01:01-018  Tid:8 >> TokenID:4996 Close:1
-[L]# 20:01:01-018  Tid:13 >> Token: 4999 => UnityClient Login Disconnected.
-[L]# 20:01:01-018  Tid:8 >> Token: 4996 => UnityClient Gameworld Disconnected.
-[W]# 20:01:01-029  Tid:11 >> TokenID:4996 Connection is Disconnected,cannot send netService message.
-[L]# 20:01:01-030  Tid:1 >> 4999 client disconnected!
-[L]# 20:01:01-031  Tid:1 >> Number of Current Entities in the GameWorld: 1
-[L]# 20:01:01-031  Tid:1 >> 4996 new client Gameworld Disconnected!
-[W]# 20:01:01-068  Tid:13 >> TokenID:4997 Close:1
-[W]# 20:01:01-068  Tid:8 >> TokenID:4999 Close:1
-[L]# 20:01:01-068  Tid:13 >> Token: 4997 => UnityClient Gameworld Disconnected.
-[L]# 20:01:01-068  Tid:8 >> Token: 4999 => UnityClient Gameworld Disconnected.
-[L]# 20:01:01-075  Tid:1 >> 4997 new client Gameworld Disconnected!
-[L]# 20:01:01-076  Tid:1 >> 4999 new client Gameworld Disconnected!
-[L]# 20:01:07-038  Tid:8 >> Token: 4999 => UnityClient Login Connection: True
-[L]# 20:01:07-040  Tid:8 >> Token: 4999 => UnityClient Gameworld Connection: True
-[L]# 20:01:07-044  Tid:1 >> 4999 new client connected!
-[L]# 20:01:07-044  Tid:1 >> 4999 new client Gameworld connected!
-[L]# 20:01:10-098  Tid:8 >> Token: 4999 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:01:10-113  Tid:1 >> Login Account: asdasd.
-[L]# 20:01:11-127  Tid:8 >> Token: 4997 => UnityClient Gameworld Connection: True
-[L]# 20:01:11-138  Tid:1 >> 4997 new client Gameworld connected!
-[L]# 20:01:12-584  Tid:8 >> Token: 4999 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:01:12-812  Tid:8 >> Token: 4996 => UnityClient Gameworld Connection: True
-[L]# 20:01:12-842  Tid:1 >> 4996 new client Gameworld connected!
-[L]# 20:01:13-030  Tid:1 >> Number of Current Entities in the GameWorld: 2
-[W]# 20:01:25-464  Tid:8 >> TokenID:4998 Close:1
-[L]# 20:01:25-464  Tid:8 >> Token: 4998 => UnityClient Login Disconnected.
-[W]# 20:01:25-465  Tid:8 >> TokenID:4994 Close:1
-[L]# 20:01:25-465  Tid:8 >> Token: 4994 => UnityClient Gameworld Disconnected.
-[L]# 20:01:25-470  Tid:1 >> 4998 client disconnected!
-[L]# 20:01:25-471  Tid:1 >> Number of Current Entities in the GameWorld: 1
-[L]# 20:01:25-471  Tid:1 >> 4994 new client Gameworld Disconnected!
-[W]# 20:01:25-509  Tid:8 >> TokenID:4995 Close:1
-[L]# 20:01:25-510  Tid:8 >> Token: 4995 => UnityClient Gameworld Disconnected.
-[W]# 20:01:25-510  Tid:8 >> TokenID:4998 Close:1
-[L]# 20:01:25-510  Tid:8 >> Token: 4998 => UnityClient Gameworld Disconnected.
-[L]# 20:01:25-517  Tid:1 >> 4995 new client Gameworld Disconnected!
-[L]# 20:01:25-517  Tid:1 >> 4998 new client Gameworld Disconnected!
-[L]# 20:01:34-902  Tid:8 >> Token: 4998 => UnityClient Login Connection: True
-[L]# 20:01:34-904  Tid:1 >> 4998 new client connected!
-[L]# 20:01:35-594  Tid:8 >> Token: 4998 => UnityClient Gameworld Connection: True
-[L]# 20:01:35-621  Tid:1 >> 4998 new client Gameworld connected!
-[L]# 20:01:37-590  Tid:8 >> Token: 4997 => UnityClient Login Connection: True
-[L]# 20:01:37-608  Tid:1 >> 4997 new client connected!
-[L]# 20:01:37-816  Tid:8 >> Token: 4995 => UnityClient Gameworld Connection: True
-[L]# 20:01:37-828  Tid:1 >> 4995 new client Gameworld connected!
-[L]# 20:01:39-741  Tid:8 >> Token: 4998 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:01:39-761  Tid:1 >> Login Account: fasdas.
-[L]# 20:01:39-966  Tid:8 >> Token: 4994 => UnityClient Gameworld Connection: True
-[L]# 20:01:39-988  Tid:1 >> 4994 new client Gameworld connected!
-[L]# 20:01:42-345  Tid:8 >> Token: 4998 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:01:42-418  Tid:8 >> Token: 4993 => UnityClient Gameworld Connection: True
-[L]# 20:01:42-429  Tid:1 >> 4993 new client Gameworld connected!
-[L]# 20:01:42-430  Tid:1 >> Number of Current Entities in the GameWorld: 2
-[L]# 20:02:00-383  Tid:20 >> Token: 4997 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:02:00-413  Tid:1 >> Login Account: asfsadsa.
-[L]# 20:02:00-617  Tid:8 >> Token: 4992 => UnityClient Gameworld Connection: True
-[L]# 20:02:00-644  Tid:1 >> 4992 new client Gameworld connected!
-[L]# 20:02:02-679  Tid:20 >> Token: 4997 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:02:02-753  Tid:8 >> Token: 4991 => UnityClient Gameworld Connection: True
-[L]# 20:02:02-754  Tid:1 >> 4991 new client Gameworld connected!
-[L]# 20:02:02-786  Tid:1 >> Number of Current Entities in the GameWorld: 3
-[W]# 20:02:22-850  Tid:20 >> TokenID:4997 Close:1
-[L]# 20:02:22-850  Tid:20 >> Token: 4997 => UnityClient Login Disconnected.
-[W]# 20:02:22-851  Tid:20 >> TokenID:4991 Close:1
-[L]# 20:02:22-851  Tid:20 >> Token: 4991 => UnityClient Gameworld Disconnected.
-[W]# 20:02:22-855  Tid:6 >> TokenID:4991 Connection is Disconnected,cannot send netService message.
-[W]# 20:02:22-855  Tid:14 >> TokenID:4991 Connection is Disconnected,cannot send netService message.
-[L]# 20:02:22-870  Tid:1 >> 4997 client disconnected!
-[L]# 20:02:22-870  Tid:1 >> Number of Current Entities in the GameWorld: 2
-[L]# 20:02:22-870  Tid:1 >> 4991 new client Gameworld Disconnected!
-[W]# 20:02:22-917  Tid:20 >> TokenID:4995 Close:1
-[L]# 20:02:22-917  Tid:20 >> Token: 4995 => UnityClient Gameworld Disconnected.
-[W]# 20:02:22-918  Tid:8 >> TokenID:4992 Close:1
-[L]# 20:02:22-918  Tid:8 >> Token: 4992 => UnityClient Gameworld Disconnected.
-[L]# 20:02:22-932  Tid:1 >> 4995 new client Gameworld Disconnected!
-[L]# 20:02:22-932  Tid:1 >> 4992 new client Gameworld Disconnected!
-[L]# 20:02:34-631  Tid:8 >> Token: 4997 => UnityClient Login Connection: True
-[L]# 20:02:34-639  Tid:1 >> 4997 new client connected!
-[L]# 20:02:34-981  Tid:8 >> Token: 4992 => UnityClient Gameworld Connection: True
-[L]# 20:02:35-013  Tid:1 >> 4992 new client Gameworld connected!
-[L]# 20:02:36-854  Tid:8 >> Token: 4997 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:02:38-047  Tid:8 >> Token: 4997 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:02:39-331  Tid:8 >> Token: 4997 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:02:39-336  Tid:1 >> Login Account: ddddd.
-[L]# 20:02:39-512  Tid:8 >> Token: 4995 => UnityClient Gameworld Connection: True
-[L]# 20:02:39-536  Tid:1 >> 4995 new client Gameworld connected!
-[L]# 20:02:41-215  Tid:8 >> Token: 4997 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:02:41-281  Tid:8 >> Token: 4991 => UnityClient Gameworld Connection: True
-[L]# 20:02:41-290  Tid:1 >> 4991 new client Gameworld connected!
-[L]# 20:02:41-322  Tid:1 >> Number of Current Entities in the GameWorld: 3
-[W]# 20:02:56-729  Tid:17 >> TokenID:4999 Close:1
-[L]# 20:02:56-730  Tid:17 >> Token: 4999 => UnityClient Login Disconnected.
-[W]# 20:02:56-730  Tid:17 >> TokenID:4996 Close:1
-[L]# 20:02:56-730  Tid:17 >> Token: 4996 => UnityClient Gameworld Disconnected.
-[L]# 20:02:56-743  Tid:1 >> 4999 client disconnected!
-[L]# 20:02:56-743  Tid:1 >> Number of Current Entities in the GameWorld: 2
-[L]# 20:02:56-743  Tid:1 >> 4996 new client Gameworld Disconnected!
-[W]# 20:02:57-730  Tid:17 >> TokenID:4999 Close:1
-[W]# 20:02:57-731  Tid:21 >> TokenID:4997 Close:1
-[L]# 20:02:57-731  Tid:17 >> Token: 4999 => UnityClient Gameworld Disconnected.
-[L]# 20:02:57-731  Tid:21 >> Token: 4997 => UnityClient Gameworld Disconnected.
-[L]# 20:02:57-759  Tid:1 >> 4999 new client Gameworld Disconnected!
-[L]# 20:02:57-759  Tid:1 >> 4997 new client Gameworld Disconnected!
-[L]# 20:03:00-441  Tid:8 >> Token: 4999 => UnityClient Login Connection: True
-[L]# 20:03:00-443  Tid:8 >> Token: 4997 => UnityClient Gameworld Connection: True
-[L]# 20:03:00-445  Tid:1 >> 4999 new client connected!
-[L]# 20:03:00-445  Tid:1 >> 4997 new client Gameworld connected!
-[L]# 20:03:09-641  Tid:8 >> Token: 4999 => Receive UnityClient Login Command:ReqAccountLogin
-[L]# 20:03:09-653  Tid:1 >> Login Account: asfadas.
-[L]# 20:03:10-119  Tid:8 >> Token: 4999 => UnityClient Gameworld Connection: True
-[L]# 20:03:10-121  Tid:1 >> 4999 new client Gameworld connected!
-[L]# 20:03:12-527  Tid:8 >> Token: 4999 => Receive UnityClient Login Command:ReqRoleEnter
-[L]# 20:03:12-679  Tid:8 >> Token: 4996 => UnityClient Gameworld Connection: True
-[L]# 20:03:12-693  Tid:1 >> 4996 new client Gameworld connected!
-[L]# 20:03:12-881  Tid:1 >> Number of Current Entities in the GameWorld: 3
-[W]# 20:03:35-846  Tid:20 >> TokenID:4998 Close:1
-[L]# 20:03:35-847  Tid:20 >> Token: 4998 => UnityClient Login Disconnected.
-[W]# 20:03:35-847  Tid:20 >> TokenID:4993 Close:1
-[L]# 20:03:35-847  Tid:20 >> Token: 4993 => UnityClient Gameworld Disconnected.
-[L]# 20:03:35-856  Tid:1 >> 4998 client disconnected!
-[L]# 20:03:35-857  Tid:1 >> Number of Current Entities in the GameWorld: 2
-[L]# 20:03:35-857  Tid:1 >> 4993 new client Gameworld Disconnected!
-[W]# 20:03:35-909  Tid:20 >> TokenID:4994 Close:1
-[L]# 20:03:35-909  Tid:20 >> Token: 4994 => UnityClient Gameworld Disconnected.
-[W]# 20:03:35-909  Tid:25 >> TokenID:4998 Close:1
-[L]# 20:03:35-910  Tid:25 >> Token: 4998 => UnityClient Gameworld Disconnected.
-[L]# 20:03:35-919  Tid:1 >> 4994 new client Gameworld Disconnected!
-[L]# 20:03:35-919  Tid:1 >> 4998 new client Gameworld Disconnected!
-[W]# 20:03:36-691  Tid:25 >> TokenID:4999 Close:1
-[L]# 20:03:36-691  Tid:25 >> Token: 4999 => UnityClient Login Disconnected.
-[W]# 20:03:36-695  Tid:13 >> TokenID:4996 Close:1
-[L]# 20:03:36-695  Tid:13 >> Token: 4996 => UnityClient Gameworld Disconnected.
-[L]# 20:03:36-709  Tid:1 >> 4999 client disconnected!
-[W]# 20:03:36-709  Tid:15 >> TokenID:4996 Connection is Disconnected,cannot send netService message.
-[L]# 20:03:36-709  Tid:1 >> Number of Current Entities in the GameWorld: 1
-[L]# 20:03:36-718  Tid:1 >> 4996 new client Gameworld Disconnected!
-[W]# 20:03:50-972  Tid:20 >> TokenID:4997 Close:1
-[W]# 20:03:50-972  Tid:25 >> TokenID:4995 Close:1
-[W]# 20:03:50-972  Tid:13 >> TokenID:4991 Close:1
-[L]# 20:03:50-974  Tid:25 >> Token: 4995 => UnityClient Gameworld Disconnected.
-[L]# 20:03:50-973  Tid:1 >> Number of Current Entities in the GameWorld: 0
-[L]# 20:03:50-974  Tid:20 >> Token: 4997 => UnityClient Login Disconnected.
-[L]# 20:03:50-976  Tid:13 >> Token: 4991 => UnityClient Gameworld Disconnected.
-[W]# 20:03:50-979  Tid:27 >> TokenID:4992 Close:1
-[L]# 20:03:50-979  Tid:1 >> 4995 new client Gameworld Disconnected!
-[L]# 20:03:50-980  Tid:27 >> Token: 4992 => UnityClient Gameworld Disconnected.
-[L]# 20:03:50-980  Tid:1 >> 4991 new client Gameworld Disconnected!
-[L]# 20:03:50-981  Tid:1 >> 4992 new client Gameworld Disconnected!
-[L]# 20:03:51-015  Tid:1 >> 4997 client disconnected!
+[L]# 14:24:44-567  Tid:1 >> Args:
+[L]# 14:24:44-586  Tid:1 >> Launch ARPGProcess ==> ID: 4001
+[L]# 14:24:44-721  Tid:1 >> Server Start...
+[L]# 14:24:44-750  Tid:1 >> Server Start...
+[L]# 14:24:59-857  Tid:8 >> Token: 4999 => UnityClient Gameworld Connection: True
+[L]# 14:24:59-882  Tid:1 >> 4999 new client Gameworld connected!
+[L]# 14:24:59-886  Tid:8 >> Token: 4999 => UnityClient Login Connection: True
+[L]# 14:24:59-927  Tid:1 >> 4999 new client connected!
+[L]# 14:25:04-576  Tid:7 >> Token: 4999 => Receive UnityClient Login Command:ReqAccountLogin
+[L]# 14:25:04-598  Tid:1 >> Login Account: asfad.
+[L]# 14:25:11-029  Tid:7 >> Token: 4999 => Receive UnityClient Login Command:ReqRoleEnter
+[L]# 14:25:11-251  Tid:8 >> Token: 4998 => UnityClient Gameworld Connection: True
+[L]# 14:25:11-269  Tid:1 >> 4998 new client Gameworld connected!
+[L]# 14:25:11-470  Tid:1 >> Number of Current Entities in the GameWorld: 1
+[W]# 14:26:51-010  Tid:17 >> TokenID:4999 Close:1
+[W]# 14:26:51-011  Tid:15 >> TokenID:4998 Close:1
+[L]# 14:26:51-011  Tid:17 >> Token: 4999 => UnityClient Login Disconnected.
+[L]# 14:26:51-011  Tid:15 >> Token: 4998 => UnityClient Gameworld Disconnected.
+[L]# 14:26:51-024  Tid:1 >> 4999 client disconnected!
+[L]# 14:26:51-025  Tid:1 >> Number of Current Entities in the GameWorld: 0
+[L]# 14:26:51-026  Tid:1 >> 4998 new client Gameworld Disconnected!
+[W]# 14:27:14-176  Tid:17 >> TokenID:4999 Close:1
+[L]# 14:27:14-176  Tid:17 >> Token: 4999 => UnityClient Gameworld Disconnected.
+[L]# 14:27:14-182  Tid:1 >> 4999 new client Gameworld Disconnected!
