@@ -42,7 +42,7 @@ namespace ARPGServer
             playerState = PlayerStateEnum.Online;
 
             moveComp = AddComp<MoveComp>();
-            moveComp.InitTimer();
+            GetComp<MoveComp>().InitTimer();
 
             animationComp = AddComp<AnimationComp>();
 

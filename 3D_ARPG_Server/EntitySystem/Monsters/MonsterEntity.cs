@@ -28,6 +28,7 @@ namespace ARPGServer
             this.monsterEnum = monsterEnum;
 
             moveComp = AddComp<MonsterMoveComp>();
+            GetComp<MonsterMoveComp>().InitTimer();
         }
 
         /// <summary>
