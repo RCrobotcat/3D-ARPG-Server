@@ -15,6 +15,9 @@ namespace ARPGServer
         readonly ConcurrentQueue<GamePackage> serverPackages = new();
         readonly Dictionary<CMD, Action<GamePackage>> serverHandlers = new();
 
+        bool isMonstersCreated = false;
+        public bool IsMonstersCreated { get; set; }
+
         public void Awake()
         {
             IOCPTool.LogFunc = PELog.Log;
@@ -30,6 +33,8 @@ namespace ARPGServer
 
             AddServerHandler(CMD.SyncMovePos, SyncMovePos);
             AddServerHandler(CMD.SyncAnimationState, SyncAnimationState);
+
+            AddServerHandler(CMD.SyncMonsterMovePos, SyncMonsterMovePos);
 
             AddServerHandler(CMD.SwitchWeapon, SwitchWeapon);
             AddServerHandler(CMD.UnEquipWeapon, UnEquipWeapon);
@@ -83,6 +88,77 @@ namespace ARPGServer
                 driverEnum = EntityDriverEnum.Client
             };
             ARPGProcess.Instance.entitySystem.AddEntity(entity);
+
+            if (ARPGProcess.Instance.entitySystem.CurrentEntitiesCount == 1)
+                entity.isFirstPlayer = true;
+
+            CreateMonsters(pkg.token);
+        }
+        /// <summary>
+        /// 创建怪物
+        /// </summary>
+        void CreateMonsters(GameToken token)
+        {
+            if (!IsMonstersCreated)
+            {
+                int golemNum = MonsterConfig.GolemNum;
+                int skeletonNum = MonsterConfig.SkeletonNum;
+                if (golemNum > 0)
+                {
+                    for (int i = 0; i < golemNum; i++)
+                    {
+                        MonsterEntity golem = new MonsterEntity(GetMonsterID(), MonstersEnum.Golem)
+                        {
+                            entityPos = new Vector3(7, 0, 5),
+                            createToken = token,
+                            driverEnum = EntityDriverEnum.Server
+                        };
+                        ARPGProcess.Instance.entitySystem.AddMonsterEntity(golem);
+                        SendMonsterCreateMsg(golem);
+                    }
+                }
+
+                if (skeletonNum > 0)
+                {
+                    for (int i = 0; i < skeletonNum; i++)
+                    {
+                        MonsterEntity skeleton = new MonsterEntity(GetMonsterID(), MonstersEnum.Skeleton)
+                        {
+                            entityPos = new Vector3(5, 0, 5),
+                            createToken = token,
+                            driverEnum = EntityDriverEnum.Server
+                        };
+                        ARPGProcess.Instance.entitySystem.AddMonsterEntity(skeleton);
+                        SendMonsterCreateMsg(skeleton);
+                    }
+                }
+
+                IsMonstersCreated = true;
+            }
+            else this.Log("Monsters already exist!");
+        }
+        /// <summary>
+        /// 发送创建怪物消息
+        /// </summary>
+        void SendMonsterCreateMsg(MonsterEntity monster)
+        {
+            NetMsg msg = new NetMsg()
+            {
+                cmd = CMD.CreateMonsters,
+                createMonsters = new()
+                {
+                    monsterID = monster.monsterID,
+                    monsterType = monster.monsterEnum,
+                    PosX = monster.entityPos.X,
+                    PosZ = monster.entityPos.Z
+                }
+            };
+            monster.createToken.SendMsg(msg);
+        }
+        int monsterID = 1001;
+        public int GetMonsterID()
+        {
+            return monsterID++;
         }
 
         /// <summary>
@@ -118,6 +194,20 @@ namespace ARPGServer
             {
                 entity.GetComp<MoveComp>().entityTargetPos = targetPos;
                 entity.GetComp<MoveComp>().entityTargetDir = targetDir;
+            }
+        }
+
+        /// <summary>
+        /// 同步怪物移动位置
+        /// </summary>
+        void SyncMonsterMovePos(GamePackage pkg)
+        {
+            SyncMonsterMovePos syncMonsterMovePos = pkg.message.syncMonsterMovePos;
+            MonsterEntity monster = ARPGProcess.Instance.entitySystem.GetMonsterByID(syncMonsterMovePos.monsterID);
+            if (monster != null)
+            {
+                monster.GetComp<MonsterMoveComp>().entityTargetPos = new Vector3(syncMonsterMovePos.PosX, 0, syncMonsterMovePos.PosZ);
+                monster.GetComp<MonsterMoveComp>().entityTargetDir = new Vector3(syncMonsterMovePos.dirX, syncMonsterMovePos.dirY, syncMonsterMovePos.dirZ);
             }
         }
 

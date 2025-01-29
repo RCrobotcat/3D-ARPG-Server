@@ -10,6 +10,8 @@ namespace ARPGServer
         public PlayerStateEnum playerState = PlayerStateEnum.None; // 玩家状态
         public EntityDriverEnum driverEnum = EntityDriverEnum.None; // 实体驱动类型
 
+        public bool isFirstPlayer = false; // 是否是第一个玩家
+
         public GameToken gameToken; // 游戏网络会话
 
         public Vector3 entityPos; // 实体位置

@@ -6,6 +6,10 @@ namespace ARPGServer
     public class EntitySystem : ILogic
     {
         readonly List<GameEntity> currentEntities = new(); // 当前实体列表
+        public List<GameEntity> CurrentEntities { get => currentEntities; }
+        public int CurrentEntitiesCount { get => currentEntities.Count; }
+
+        readonly List<MonsterEntity> currentMonsters = new(); // 当前怪物列表
 
         public void Awake() { }
 
@@ -14,6 +18,11 @@ namespace ARPGServer
             foreach (var entity in currentEntities)
             {
                 entity.Update();
+            }
+
+            foreach (var monster in currentMonsters)
+            {
+                monster.Update();
             }
         }
 
@@ -54,6 +63,13 @@ namespace ARPGServer
                     }
                 });
                 this.LogCyan($"Number of Current Entities in the GameWorld: {currentEntities.Count}");
+
+                if (currentEntities.Count == 0)
+                {
+                    currentMonsters.Clear();
+                    ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
+                    this.LogYellow("All Entities in the GameWorld have been removed!");
+                }
             }
         }
 
@@ -104,6 +120,33 @@ namespace ARPGServer
             {
                 entity.GetComp<WeaponAndArmorComp>().SendSwitchWeapon();
             }
+        }
+
+        /// <summary>
+        /// 添加怪物实体
+        /// </summary>
+        public void AddMonsterEntity(MonsterEntity entity)
+        {
+            if (!currentMonsters.Contains(entity))
+            {
+                currentMonsters.Add(entity);
+                this.LogYellow($"Number of Current Monsters in the GameWorld: {currentMonsters.Count}");
+            }
+        }
+        /// <summary>
+        /// 移除怪物实体
+        /// </summary>
+        public void RemoveMonsterEntity(MonsterEntity entity)
+        {
+            if (currentMonsters.Contains(entity))
+            {
+                currentMonsters.Remove(entity);
+                this.LogYellow($"Number of Current Monsters in the GameWorld: {currentMonsters.Count}");
+            }
+        }
+        public MonsterEntity GetMonsterByID(int id)
+        {
+            return currentMonsters.Find(e => e.monsterID == id);
         }
     }
 }
