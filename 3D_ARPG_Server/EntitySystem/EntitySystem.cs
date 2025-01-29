@@ -63,13 +63,13 @@ namespace ARPGServer
                     }
                 });
                 this.LogCyan($"Number of Current Entities in the GameWorld: {currentEntities.Count}");
+            }
 
-                if (currentEntities.Count == 0)
-                {
-                    currentMonsters.Clear();
-                    ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
-                    this.LogYellow("All Entities in the GameWorld have been removed!");
-                }
+            if (currentEntities.Count == 0)
+            {
+                currentMonsters.Clear();
+                ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
+                this.LogYellow("All Entities in the GameWorld have been removed!");
             }
         }
 
@@ -104,7 +104,16 @@ namespace ARPGServer
         /// <param name="id">要退出的实体id</param>
         public void ExitEntityByID(int id)
         {
-            var entity = currentEntities.Find(e => e.roleID == id);
+            GameEntity entity = currentEntities.Find(e => e.roleID == id);
+
+            // 如果是第一个玩家退出游戏，则清空所有其创建的怪物实体
+            if (entity.isFirstPlayer)
+            {
+                currentMonsters.Clear();
+                ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
+                this.LogYellow("All Entities in the GameWorld have been removed!");
+            }
+
             if (entity != null)
             {
                 entity.Destroy();
