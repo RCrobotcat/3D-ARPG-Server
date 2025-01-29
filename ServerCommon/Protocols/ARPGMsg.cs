@@ -72,8 +72,5 @@ namespace RCProtocol
         Combo_3,
         Combo_4,
         Combo_5,
-
-        // Monster Attack
-        MonsterAttack
     }
 }

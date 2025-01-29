@@ -35,6 +35,7 @@ namespace ARPGServer
             AddServerHandler(CMD.SyncAnimationState, SyncAnimationState);
 
             AddServerHandler(CMD.SyncMonsterMovePos, SyncMonsterMovePos);
+            AddServerHandler(CMD.SyncMonsterAnimationState, SyncMonsterAnimationState);
 
             AddServerHandler(CMD.SwitchWeapon, SwitchWeapon);
             AddServerHandler(CMD.UnEquipWeapon, UnEquipWeapon);
@@ -208,6 +209,19 @@ namespace ARPGServer
             {
                 monster.GetComp<MonsterMoveComp>().entityTargetPos = new Vector3(syncMonsterMovePos.PosX, 0, syncMonsterMovePos.PosZ);
                 monster.GetComp<MonsterMoveComp>().entityTargetDir = new Vector3(syncMonsterMovePos.dirX, syncMonsterMovePos.dirY, syncMonsterMovePos.dirZ);
+            }
+        }
+
+        /// <summary>
+        /// 同步怪物动画状态
+        /// </summary>
+        void SyncMonsterAnimationState(GamePackage pkg)
+        {
+            SyncMonsterAnimationState syncMonsterAnimationState = pkg.message.syncMonsterAnimationState;
+            MonsterEntity monster = ARPGProcess.Instance.entitySystem.GetMonsterByID(syncMonsterAnimationState.monsterID);
+            if (monster != null)
+            {
+                monster.GetComp<MonsterAnimationComp>().animationState = syncMonsterAnimationState.monsterAnimationStateEnum;
             }
         }
 

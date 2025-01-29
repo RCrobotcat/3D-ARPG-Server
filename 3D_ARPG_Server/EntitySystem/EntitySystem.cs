@@ -69,7 +69,7 @@ namespace ARPGServer
             {
                 currentMonsters.Clear();
                 ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
-                this.LogYellow("All Entities in the GameWorld have been removed!");
+                this.LogCyan("All Entities in the GameWorld have been removed!");
             }
         }
 

@@ -35,6 +35,7 @@
 
         CreateMonsters, // Create Monsters. 创建怪物
         SyncMonsterMovePos, // Synchronize Monster Position. 同步怪物位置
+        SyncMonsterAnimationState, // Synchronize Monster Animation State. 同步怪物动画状态
 
         PushStateData, // Push State Data. 推送状态数据
 

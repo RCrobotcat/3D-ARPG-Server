@@ -21,6 +21,7 @@ namespace ARPGServer
         readonly protected Dictionary<int, MonsterEntityComp> compDic = new();
 
         MonsterMoveComp moveComp;
+        MonsterAnimationComp animationComp;
 
         public MonsterEntity(int id, MonstersEnum monsterEnum)
         {
@@ -29,6 +30,8 @@ namespace ARPGServer
 
             moveComp = AddComp<MonsterMoveComp>();
             GetComp<MonsterMoveComp>().InitTimer();
+
+            animationComp = AddComp<MonsterAnimationComp>();
         }
 
         /// <summary>

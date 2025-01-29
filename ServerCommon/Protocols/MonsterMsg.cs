@@ -7,6 +7,22 @@
         //...
     }
 
+    public enum MonsterAnimationStateEnum
+    {
+        None,
+        Run,
+        Attack,
+    }
+
+    /// <summary>
+    /// 同步怪物动画状态
+    /// </summary>
+    public class SyncMonsterAnimationState
+    {
+        public int monsterID { get; set; }
+        public MonsterAnimationStateEnum monsterAnimationStateEnum { get; set; }
+    }
+
     /// <summary>
     /// 创建怪物
     /// </summary>
@@ -40,5 +56,6 @@
     {
         public CreateMonsters createMonsters { get; set; }
         public SyncMonsterMovePos syncMonsterMovePos { get; set; }
+        public SyncMonsterAnimationState syncMonsterAnimationState { get; set; }
     }
 }
