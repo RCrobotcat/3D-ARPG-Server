@@ -13,8 +13,6 @@ namespace ARPGServer
 
         public GameToken createToken; // 创建怪物的玩家会话
 
-        public GameToken gameToken; // 游戏网络会话
-
         public Vector3 entityPos; // 实体位置
         public Vector3 entityDir; // 实体方向
 
@@ -32,6 +30,18 @@ namespace ARPGServer
             GetComp<MonsterMoveComp>().InitTimer();
 
             animationComp = AddComp<MonsterAnimationComp>();
+        }
+
+        public override void Destroy()
+        {
+            base.Destroy();
+
+            moveComp = null;
+            animationComp = null;
+
+            compDic.Clear();
+
+            createToken = null;
         }
 
         /// <summary>

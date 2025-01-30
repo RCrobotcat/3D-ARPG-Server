@@ -57,5 +57,12 @@
         public CreateMonsters createMonsters { get; set; }
         public SyncMonsterMovePos syncMonsterMovePos { get; set; }
         public SyncMonsterAnimationState syncMonsterAnimationState { get; set; }
+
+        public RemoveMonster removeMonster { get; set; }
+    }
+
+    public class RemoveMonster
+    {
+        public int monsterID { get; set; }
     }
 }

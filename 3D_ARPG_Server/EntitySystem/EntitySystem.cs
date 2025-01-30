@@ -1,5 +1,6 @@
 ﻿using RCCommon;
 using RCProtocol;
+using System.Collections.Concurrent;
 
 namespace ARPGServer
 {
@@ -9,7 +10,8 @@ namespace ARPGServer
         public List<GameEntity> CurrentEntities { get => currentEntities; }
         public int CurrentEntitiesCount { get => currentEntities.Count; }
 
-        readonly List<MonsterEntity> currentMonsters = new(); // 当前怪物列表
+        private ConcurrentQueue<MonsterEntity> currentMonsters = new(); // 怪物队列
+        List<int> removedMonsterIDs = new List<int>(); // 已经被移除的怪物ID列表
 
         public void Awake() { }
 
@@ -23,6 +25,12 @@ namespace ARPGServer
             foreach (var monster in currentMonsters)
             {
                 monster.Update();
+            }
+
+            // 移除已经被移除的怪物ID
+            for (int i = 0; i < removedMonsterIDs.Count; i++)
+            {
+                SendRemoveMonster(removedMonsterIDs[i]);
             }
         }
 
@@ -39,6 +47,7 @@ namespace ARPGServer
                 this.LogCyan($"Number of Current Entities in the GameWorld: {currentEntities.Count}");
             }
         }
+
         /// <summary>
         /// 通过ID获取实体
         /// </summary>
@@ -46,6 +55,7 @@ namespace ARPGServer
         {
             return currentEntities.Find(e => e.roleID == id);
         }
+
         /// <summary>
         /// 移除实体
         /// </summary>
@@ -67,7 +77,15 @@ namespace ARPGServer
 
             if (currentEntities.Count == 0)
             {
-                currentMonsters.Clear();
+                // 如果所有实体被移除，清空怪物列表
+                foreach (var monster in currentMonsters)
+                {
+                    SendRemoveMonster(monster.monsterID);
+                    removedMonsterIDs.Add(monster.monsterID);
+                    monster.Destroy();
+                }
+
+                currentMonsters = new ConcurrentQueue<MonsterEntity>(); // 重建一个新的队列
                 ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
                 this.LogCyan("All Entities in the GameWorld have been removed!");
             }
@@ -80,15 +98,13 @@ namespace ARPGServer
         {
             if (currentEntities.Count == 0) return;
 
-            /* if (msg.cmd == CMD.SyncAnimationState)
-                 this.LogYellow($"SendToAll: {msg.syncAnimationState.animationStateEnum}");*/
-
             foreach (var entity in currentEntities)
             {
                 if (entity != null && entity.gameToken != null && entity.gameToken != selfToken)
                     entity.gameToken.SendMsg(msg);
             }
         }
+
         public void SendToAll(NetMsg msg)
         {
             foreach (var entity in currentEntities)
@@ -107,9 +123,16 @@ namespace ARPGServer
             GameEntity entity = currentEntities.Find(e => e.roleID == id);
 
             // 如果是第一个玩家退出游戏，则清空所有其创建的怪物实体
-            if (entity.isFirstPlayer)
+            if (entity != null && entity.isFirstPlayer)
             {
-                currentMonsters.Clear();
+                foreach (var monster in currentMonsters)
+                {
+                    SendRemoveMonster(monster.monsterID);
+                    removedMonsterIDs.Add(monster.monsterID);
+                    monster.Destroy();
+                }
+
+                currentMonsters = new ConcurrentQueue<MonsterEntity>(); // 清空怪物队列
                 ARPGProcess.Instance.gameNet.IsMonstersCreated = false;
                 this.LogYellow("All Entities in the GameWorld have been removed!");
             }
@@ -136,26 +159,69 @@ namespace ARPGServer
         /// </summary>
         public void AddMonsterEntity(MonsterEntity entity)
         {
-            if (!currentMonsters.Contains(entity))
-            {
-                currentMonsters.Add(entity);
-                this.LogYellow($"Number of Current Monsters in the GameWorld: {currentMonsters.Count}");
-            }
+            currentMonsters.Enqueue(entity);
+            this.LogYellow($"Number of Current Monsters in the GameWorld: {currentMonsters.Count}");
         }
+
         /// <summary>
         /// 移除怪物实体
         /// </summary>
         public void RemoveMonsterEntity(MonsterEntity entity)
         {
-            if (currentMonsters.Contains(entity))
+            var tempQueue = new ConcurrentQueue<MonsterEntity>();
+            bool found = false;
+
+            // 通过遍历队列寻找并排除指定的怪物
+            while (currentMonsters.TryDequeue(out var monster))
             {
-                currentMonsters.Remove(entity);
+                if (!found && monster.Equals(entity))
+                {
+                    found = true;  // 找到该怪物并跳过
+                    continue;
+                }
+                tempQueue.Enqueue(monster);  // 重新添加其它怪物
+            }
+
+            currentMonsters = tempQueue;  // 替换队列
+
+            if (found)
+            {
                 this.LogYellow($"Number of Current Monsters in the GameWorld: {currentMonsters.Count}");
             }
+            else
+            {
+                this.LogYellow("Monster not found in the queue.");
+            }
         }
+
+        /// <summary>
+        /// 通过ID获取怪物
+        /// </summary>
         public MonsterEntity GetMonsterByID(int id)
         {
-            return currentMonsters.Find(e => e.monsterID == id);
+            foreach (var monster in currentMonsters)
+            {
+                if (monster.monsterID == id)
+                {
+                    return monster;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 移除怪物消息
+        /// </summary>
+        public void SendRemoveMonster(int id)
+        {
+            SendToAll(new NetMsg
+            {
+                cmd = CMD.RemoveMonster,
+                removeMonster = new RemoveMonster
+                {
+                    monsterID = id
+                }
+            });
         }
     }
 }

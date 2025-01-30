@@ -37,6 +37,8 @@
         SyncMonsterMovePos, // Synchronize Monster Position. 同步怪物位置
         SyncMonsterAnimationState, // Synchronize Monster Animation State. 同步怪物动画状态
 
+        RemoveMonster, // Remove Monster. 移除怪物
+
         PushStateData, // Push State Data. 推送状态数据
 
         #region Battle进程内部协议 Battle process internal protocol 
