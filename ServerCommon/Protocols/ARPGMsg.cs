@@ -58,6 +58,8 @@ namespace RCProtocol
         public SwitchWeapon switchWeapon { get; set; }
         public UnEquipWeapon unEquipWeapon { get; set; }
         public RemoveEntity removeEntity { get; set; }
+
+        public PlayerBeAttack playerBeAttack { get; set; }
     }
 
     public enum AnimationStateEnum
@@ -73,6 +75,13 @@ namespace RCProtocol
         Combo_4,
         Combo_5,
 
+        BeHit,
         Dead,
+    }
+
+    public class PlayerBeAttack
+    {
+        public int roleID { get; set; }
+        public float damage { get; set; }
     }
 }

@@ -37,6 +37,8 @@ namespace ARPGServer
             AddServerHandler(CMD.SyncMonsterMovePos, SyncMonsterMovePos);
             AddServerHandler(CMD.SyncMonsterAnimationState, SyncMonsterAnimationState);
 
+            AddServerHandler(CMD.PlayerBeAttacked, PlayerBeAttack);
+
             AddServerHandler(CMD.SwitchWeapon, SwitchWeapon);
             AddServerHandler(CMD.UnEquipWeapon, UnEquipWeapon);
 
@@ -236,6 +238,27 @@ namespace ARPGServer
             {
                 entity.GetComp<AnimationComp>().animationState = syncAnimationState.animationStateEnum;
             }
+        }
+
+        /// <summary>
+        /// 玩家被攻击
+        /// </summary>
+        void PlayerBeAttack(GamePackage pkg)
+        {
+            int roleID = pkg.message.playerBeAttack.roleID;
+            GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(roleID);
+
+            float damage = pkg.message.playerBeAttack.damage;
+
+            entity.gameToken.SendMsg(new NetMsg
+            {
+                cmd = CMD.PlayerBeAttacked,
+                playerBeAttack = new PlayerBeAttack
+                {
+                    roleID = roleID,
+                    damage = damage
+                }
+            });
         }
 
         /// <summary>

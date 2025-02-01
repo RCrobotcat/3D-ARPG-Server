@@ -15,6 +15,11 @@ namespace ARPGServer
             {
                 lastSentAnimationState = animationState;
                 SendSyncAnimationState();
+
+                if (animationState == AnimationStateEnum.BeHit || animationState == AnimationStateEnum.Dead)
+                {
+                    animationState = AnimationStateEnum.None; // 重置动画状态
+                }
             }
         }
 
