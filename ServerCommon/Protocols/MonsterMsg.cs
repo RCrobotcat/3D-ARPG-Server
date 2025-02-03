@@ -12,6 +12,8 @@
         None,
         Run,
         Attack,
+        BeHit,
+        Dead
     }
 
     /// <summary>
@@ -58,7 +60,15 @@
         public SyncMonsterMovePos syncMonsterMovePos { get; set; }
         public SyncMonsterAnimationState syncMonsterAnimationState { get; set; }
 
+        public MonsterBeAttacked monsterBeAttacked { get; set; }
+
         public RemoveMonster removeMonster { get; set; }
+    }
+
+    public class MonsterBeAttacked
+    {
+        public int monsterID { get; set; }
+        public float damage { get; set; }
     }
 
     public class RemoveMonster

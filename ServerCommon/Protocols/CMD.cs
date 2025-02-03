@@ -40,6 +40,7 @@
         RemoveMonster, // Remove Monster. 移除怪物
 
         PlayerBeAttacked, // Player Be Attacked. 玩家被攻击
+        MonsterBeAttacked, // Monster Be Attacked. 怪物被攻击
 
         PushStateData, // Push State Data. 推送状态数据
 

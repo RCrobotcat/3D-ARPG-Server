@@ -15,6 +15,11 @@ namespace ARPGServer
             {
                 lastSentAnimationState = animationState;
                 SendSyncAnimationState();
+
+                if (animationState == MonsterAnimationStateEnum.BeHit || animationState == MonsterAnimationStateEnum.Dead)
+                {
+                    animationState = MonsterAnimationStateEnum.None; // 重置动画状态
+                }
             }
         }
 

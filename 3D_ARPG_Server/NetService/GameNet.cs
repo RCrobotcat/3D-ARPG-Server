@@ -38,6 +38,7 @@ namespace ARPGServer
             AddServerHandler(CMD.SyncMonsterAnimationState, SyncMonsterAnimationState);
 
             AddServerHandler(CMD.PlayerBeAttacked, PlayerBeAttack);
+            AddServerHandler(CMD.MonsterBeAttacked, MonsterBeAttacked);
 
             AddServerHandler(CMD.SwitchWeapon, SwitchWeapon);
             AddServerHandler(CMD.UnEquipWeapon, UnEquipWeapon);
@@ -259,6 +260,29 @@ namespace ARPGServer
                     damage = damage
                 }
             });
+        }
+
+        /// <summary>
+        /// 怪物被攻击
+        /// </summary>
+        void MonsterBeAttacked(GamePackage pkg)
+        {
+            int monsterID = pkg.message.monsterBeAttacked.monsterID;
+            MonsterEntity monster = ARPGProcess.Instance.entitySystem.GetMonsterByID(monsterID);
+            float damage = pkg.message.monsterBeAttacked.damage;
+            GameToken sendToken = pkg.token;
+
+            NetMsg msg = new NetMsg
+            {
+                cmd = CMD.MonsterBeAttacked,
+                monsterBeAttacked = new MonsterBeAttacked
+                {
+                    monsterID = monsterID,
+                    damage = damage
+                }
+            };
+
+            ARPGProcess.Instance.entitySystem.SendToAll(msg, sendToken);
         }
 
         /// <summary>
