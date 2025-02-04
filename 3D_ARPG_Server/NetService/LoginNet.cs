@@ -181,7 +181,7 @@ namespace ARPGServer
                     {
                         // stageID = 2
                         mode = EnterStageMode.Login,
-                        stageName = "TestScene"
+                        stageName = "GameScene"
                     }
                 };
                 pkg.token.SendMsg(enterMsg);
@@ -197,8 +197,8 @@ namespace ARPGServer
                         account = reqRoleEnter.account,
                         playerState = PlayerStateEnum.Online,
                         driverEnum = EntityDriverEnum.Client,
-                        PosX = 1,
-                        PosZ = 1,
+                        PosX = 10,
+                        PosZ = 10,
                     }
                 });
             }
