@@ -36,6 +36,7 @@ namespace ARPGServer
 
             AddServerHandler(CMD.SyncMonsterMovePos, SyncMonsterMovePos);
             AddServerHandler(CMD.SyncMonsterAnimationState, SyncMonsterAnimationState);
+            AddServerHandler(CMD.SyncAliveState, SyncAliveState);
 
             AddServerHandler(CMD.PlayerBeAttacked, PlayerBeAttack);
             AddServerHandler(CMD.MonsterBeAttacked, MonsterBeAttacked);
@@ -239,6 +240,22 @@ namespace ARPGServer
             {
                 entity.GetComp<AnimationComp>().animationState = syncAnimationState.animationStateEnum;
             }
+        }
+
+        /// <summary>
+        /// 同步复活状态
+        /// </summary>
+        void SyncAliveState(GamePackage pkg)
+        {
+            GameEntity entity = ARPGProcess.Instance.entitySystem.GetEntityByID(pkg.message.syncAliveState.roleID);
+            ARPGProcess.Instance.entitySystem.SendToAll(new NetMsg
+            {
+                cmd = CMD.SyncAliveState,
+                syncAliveState = new SyncAliveState
+                {
+                    roleID = entity.roleID,
+                }
+            }, pkg.token);
         }
 
         /// <summary>

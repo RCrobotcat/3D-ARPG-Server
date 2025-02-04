@@ -32,6 +32,7 @@
 
         SyncMovePos, // Synchronize Move Position. 客户端同步移动位置
         SyncAnimationState, // Synchronize Animation State. 客户端同步动画状态
+        SyncAliveState, // Synchronize Alive State. 客户端同步复活状态
 
         CreateMonsters, // Create Monsters. 创建怪物
         SyncMonsterMovePos, // Synchronize Monster Position. 同步怪物位置

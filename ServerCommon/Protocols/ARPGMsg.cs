@@ -60,6 +60,7 @@ namespace RCProtocol
         public RemoveEntity removeEntity { get; set; }
 
         public PlayerBeAttack playerBeAttack { get; set; }
+        public SyncAliveState syncAliveState { get; set; }
     }
 
     public enum AnimationStateEnum
@@ -83,5 +84,10 @@ namespace RCProtocol
     {
         public int roleID { get; set; }
         public float damage { get; set; }
+    }
+
+    public class SyncAliveState
+    {
+        public int roleID { get; set; }
     }
 }
